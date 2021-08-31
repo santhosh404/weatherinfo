@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Info | Home</title>
+
+    <style>
+      body {
+        font-family: "Quicksand", sans-serif;
+      }
+      .container-back {
+        width: 40%;
+        height: auto;
+        -webkit-box-shadow: 0px 0px 5px 3px #ededed;
+        box-shadow: 0px 0px 5px 3px #ededed;
+        margin: auto;
+        margin-top: 10%;
+        border-radius: 4px;
+        padding: 10px 10px;
+        text-align: center;
+      }
+      .container-back h1 {
+        font-family: "Bebas Neue", cursive;
+        font-size: 40px;
+      }
+      .container-back p {
+        text-align: justify;
+        margin: 20px 30px;
+      }
+
+      .inbox {
+        width: 50%;
+        height: 20px;
+        display: block;
+        border-radius: 10px;
+        background-color: #e5e5e5;
+        border: 1px #e5e5e5;
+        font-size: 15px;
+        padding: 10px 10px;
+        font-family: "Quicksand", sans-serif;
+        font-weight: bold;
+        -webkit-box-shadow: 5px 5px 2px 2px #e5e5e5;
+        box-shadow: 5px 5px 2px 2px #e5e5e5;
+        margin: 10px auto;
+      }
+      .inbox::after {
+        font-family: "Quicksand", sans-serif;
+        border-radius: 10px;
+        border: 1px #e5e5e5;
+      }
+
+      .myButton {
+        box-shadow: inset 0px 1px 0px 0px #97c4fe;
+        background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+        background-color: #3d94f6;
+        border-radius: 6px;
+        border: 1px solid #337fed;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+        padding: 6px 24px;
+        text-decoration: none;
+        text-shadow: 0px 1px 0px #1570cd;
+        margin-top: 20px;
+      }
+      .myButton:hover {
+        background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+        background-color: #1e62d0;
+      }
+      .myButton:active {
+        position: relative;
+        top: 1px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .container-back {
+          width: 80%;
+          height: auto;
+          -webkit-box-shadow: 0px 0px 5px 3px #ededed;
+          box-shadow: 0px 0px 5px 3px #ededed;
+          margin: auto;
+          margin-top: 30%;
+          border-radius: 4px;
+          padding: 10px 10px;
+          text-align: center;
+        }
+        .container-back h1 {
+          font-size: 30px;
+        }
+        .inbox {
+          width: 80%;
+          height: 20px;
+          border-radius: 10px;
+          background-color: #e5e5e5;
+          border: 1px #e5e5e5;
+          font-size: 15px;
+          padding: 10px 10px;
+          -webkit-box-shadow: 5px 5px 2px 2px #e5e5e5;
+          box-shadow: 5px 5px 2px 2px #e5e5e5;
+          margin: 10px auto;
+        }
+      }
+      @media only screen and (max-width: 450px) {
+        .container-back {
+          width: 90%;
+          height: auto;
+          -webkit-box-shadow: 0px 0px 5px 3px #ededed;
+          box-shadow: 0px 0px 5px 3px #ededed;
+          margin: auto;
+          margin-top: 30%;
+          border-radius: 4px;
+          padding: 10px 10px;
+          text-align: center;
+        }
+        .container-back h1 {
+          font-size: 24px;
+        }
+        .container-back p {
+          font-size: 15px;
+        }
+        .inbox {
+          width: 80%;
+          height: 20px;
+          border-radius: 10px;
+          background-color: #e5e5e5;
+          border: 1px #e5e5e5;
+          font-size: 15px;
+          padding: 10px 10px;
+          -webkit-box-shadow: 5px 5px 2px 2px #e5e5e5;
+          box-shadow: 5px 5px 2px 2px #e5e5e5;
+          margin: 10px auto;
+        }
+      }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container-back">
+      <h1>Live Weather info</h1>
+      <p>
+        This is Simple project where the you can see the weather informations
+        like temperature, humidity, cloud conditions, etc on one click and you
+        can also see the various cities weather informations over the world!
+        This project is developed using open weather map api and rapidapi.
+        <b>Happy Journey!</b>
+      </p>
+      <form action="" method="POST">
+        {% csrf_token %}
+
+        <input
+          class="inbox"
+          id="textbox"
+          type="text"
+          placeholder="City Name.."
+          name="city"
+          required
+        />
+
+        <button type="submit" class="myButton">Get Weather</button>
+      </form>
+      <p
+        style="
+          text-align: center;
+          font-size: 13px;
+          font-family: 'Poppins', sans-serif;
+        "
+      >
+        Developed By @Santhosh A
+      </p>
+    </div>
+  </body>
+</html>

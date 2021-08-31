@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error!</title>
+
+    <style>
+      body {
+        font-family: "Quicksand", sans-serif;
+        text-align: center;
+      }
+      .container-back {
+        width: 40%;
+        height: auto;
+        -webkit-box-shadow: 0px 0px 5px 3px #ededed;
+        box-shadow: 0px 0px 5px 3px #ededed;
+        margin: auto;
+        margin-top: 10%;
+        border-radius: 4px;
+        padding: 10px 10px;
+        text-align: center;
+      }
+      .container-back h1{
+        font-family: "Quicksand", sans-serif;
+        font-size: 25px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color:red;
+      }
+      .myButton {
+        box-shadow: inset 0px 1px 0px 0px #f7c5c0;
+        background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+        background-color: #fc8d83;
+        border-radius: 6px;
+        border: 1px solid #d83526;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+        padding: 6px 24px;
+        text-decoration: none;
+        margin-bottom: 30px;
+        text-shadow: 0px 1px 0px #b23e35;
+      }
+      .myButton:hover {
+        background: linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+        background-color: #e4685d;
+      }
+      .myButton:active {
+        position: relative;
+        top: 1px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .container-back {
+          width: 80%;
+          height: auto;
+          -webkit-box-shadow: 0px 0px 5px 3px #ededed;
+          box-shadow: 0px 0px 5px 3px #ededed;
+          margin: auto;
+          margin-top: 30%;
+          border-radius: 4px;
+          padding: 10px 10px;
+          text-align: center;
+        }
+        .container-back h1 {
+          font-size: 30px;
+        }
+     
+      }
+      @media only screen and (max-width: 450px) {
+        .container-back {
+          width: 90%;
+          height: auto;
+          -webkit-box-shadow: 0px 0px 5px 3px #ededed;
+          box-shadow: 0px 0px 5px 3px #ededed;
+          margin: auto;
+          margin-top: 30%;
+          border-radius: 4px;
+          padding: 10px 10px;
+          text-align: center;
+        }
+        .container-back h1 {
+          font-size: 24px;
+        }
+        .container-back p {
+          font-size: 15px;
+        }
+       
+      }
+    
+    </style>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+  rel="stylesheet"
+/>
+  </head>
+  <body>
+    <div class="container-back">
+      <h1>Invalid City Name!</h1>
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <lottie-player
+        src="https://assets8.lottiefiles.com/private_files/lf30_3scgfuxp.json"
+        background="transparent"
+        speed="1"
+        style="width: auto; height: 300px"
+        loop
+        autoplay
+      ></lottie-player>
+ <a href=""><button class="myButton">Back</button></a>  
+     
+    </div>
+  </body>
+</html>

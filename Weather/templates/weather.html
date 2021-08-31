@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Info | Details</title>
+    <style>
+      body {
+        font-family: "Quicksand", sans-serif !important;
+      }
+      .container-back {
+        width: 40%;
+        height: auto;
+        -webkit-box-shadow: 0px 0px 5px 3px #ededed;
+        box-shadow: 0px 0px 5px 3px #ededed;
+        margin: auto;
+        margin-top: 3%;
+        border-radius: 4px;
+        padding: 10px 10px;
+        text-align: center;
+      }
+      .container-back h1 {
+        font-family: "Bebas Neue", cursive !important;
+        font-size: 40px;
+      }
+      .container-back p {
+        text-align: justify;
+        margin: 20px 30px;
+      }
+     
+      table {
+        margin-top: 20px;
+      }
+
+      .myButton {
+        box-shadow: inset 0px 1px 0px 0px #f7c5c0;
+        background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+        background-color: #fc8d83;
+        border-radius: 6px;
+        border: 1px solid #d83526;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+        padding: 6px 24px;
+        text-decoration: none;
+        text-shadow: 0px 1px 0px #b23e35;
+      }
+      .myButton:hover {
+        background: linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+        background-color: #e4685d;
+      }
+      .myButton:active {
+        position: relative;
+        top: 1px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .container-back {
+          width: 80%;
+          height: auto;
+          -webkit-box-shadow: 0px 0px 5px 3px #ededed;
+          box-shadow: 0px 0px 5px 3px #ededed;
+          margin: auto;
+          margin-top: 10%;
+          border-radius: 4px;
+          padding: 10px 10px;
+          text-align: center;
+        }
+        .container-back h1 {
+          font-size: 30px;
+        }
+        td{
+          font-size: 15px;
+        }
+      }
+      @media only screen and (max-width: 450px) {
+        .container-back {
+          width: 90%;
+          height: auto;
+          -webkit-box-shadow: 0px 0px 5px 3px #ededed;
+          box-shadow: 0px 0px 5px 3px #ededed;
+          margin: auto;
+          margin-top: 10%;
+          border-radius: 4px;
+          padding: 10px 10px;
+          text-align: center;
+        }
+        .container-back h1 {
+          font-size: 24px;
+        }
+        .container-back p {
+          font-size: 10px;
+        }
+
+        td{
+          font-size: 15px;
+        }
+
+      
+      }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+      integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+      integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container-back">
+      <h1>Live Weather info</h1>
+
+      <img src="https://openweathermap.org/img/wn/{{cloud}}@2x.png" alt="" />
+      <h5 style="font-weight: bold">{{Weather}}</h5>
+
+      <table class="table table-striped table-hover">
+        <tbody>
+          <tr>
+            <td>City</td>
+            <td>{{City_name}}</td>
+          </tr>
+          <tr>
+            <td>Country Code</td>
+            <td>{{Country}}</td>
+          </tr>
+          <tr>
+            <td>Temperature</td>
+            <td>{{Temperature}}&#176; C</td>
+          </tr>
+          <tr>
+            <td>Humidity</td>
+            <td>{{Humidity}} %</td>
+          </tr>
+          <tr>
+            <td>Wind Speed</td>
+            <td>{{Wind_speed}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    <a href=""><button class="myButton">Back</button></a>  
+      <p style="text-align: center; font-size: 13px; font-family: 'Poppins', sans-serif;">
+        Developed By @Santhosh A
+      </p>
+    </div>
+  </body>
+</html>
